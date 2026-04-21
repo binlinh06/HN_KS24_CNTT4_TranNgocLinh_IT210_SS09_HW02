@@ -1,0 +1,10 @@
+Trình duyệt chưa có cookie guest_name
+Spring cố inject giá trị vào guestName
+Không tìm thấy cookie → ném Exception ngay lập tức
+Cụ thể:
+MissingRequestCookieException
+ ->HTTP 400 Bad Request
+Hệ quả
+Method không bao giờ được chạy
+Dòng if (guestName == null) không có cơ hội thực thi
+Nên việc check null ở đây là vô nghĩa
